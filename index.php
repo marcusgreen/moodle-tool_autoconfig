@@ -30,14 +30,18 @@ $url = new moodle_url('/admin/tool/autoconfig/index.php', []);
 $PAGE->set_url($url);
 $PAGE->set_context(context_system::instance());
 
-xdebug_break();
-
 $PAGE->set_heading($SITE->fullname);
 echo $OUTPUT->header();
 // Publish as LTI tool.
 $class = \core_plugin_manager::resolve_plugininfo_class('enrol');
 $class::enable_plugin('lti', true);
 echo 'Publish as LTI Tools is enabled</br>';
+
+
+// Publish as LTI tool template
+$class = \core_plugin_manager::resolve_plugininfo_class('enrol');
+$class::enable_plugin('lticoursetemplate', true);
+echo  'Publish as LTI Course Template is enabled</br>';
 
 //LTI Authentication
 $class = \core_plugin_manager::resolve_plugininfo_class('auth');
