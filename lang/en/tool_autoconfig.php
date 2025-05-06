@@ -25,4 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Auto config ';
+$string['pluginname'] = 'Auto config';
+$string['ltiprovider'] = 'LTI Provider';
+

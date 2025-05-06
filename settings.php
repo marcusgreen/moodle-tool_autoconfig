@@ -25,5 +25,9 @@ defined('MOODLE_INTERNAL') || die();
 
 if (is_siteadmin()) {
     $settingspage = new admin_settingpage('tool_autconfig' , get_string('pluginname', 'tool_autoconfig'));
+    $ADMIN->add('development', new admin_externalpage('tool_autoconfig',
+    get_string('pluginname', 'tool_autoconfig'),
+    new moodle_url('/admin/tool/autoconfig/index.php')));
+
     $ADMIN->add('tools', $settingspage);
 }
